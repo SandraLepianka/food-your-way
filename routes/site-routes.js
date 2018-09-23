@@ -43,7 +43,6 @@ siteRoutes.get("/dashboard/vegetarian", (req, res, next) => {
 
   Restaurants.find({phone: 'vegetarian'})
     .then(results => {
-      console.log("here, motherfucker! ",results);
       const vegetarian = results;
       res.render("dashboard", {vegetarian});
     })
@@ -51,9 +50,34 @@ siteRoutes.get("/dashboard/vegetarian", (req, res, next) => {
       console.log(error);
     })
 ;// Ends promise restaurants
-
-
 })
+
+siteRoutes.get("/dashboard/vegan", (req, res, next) => {
+
+  Restaurants.find({phone: 'vegan'})
+    .then(results => {
+      const vegan = results;
+      res.render("dashboard", {vegan});
+    })
+    .catch(error => {
+      console.log(error);
+    })
+;// Ends promise restaurants
+})
+
+siteRoutes.get("/dashboard/kosher", (req, res, next) => {
+
+  Restaurants.find({phone: 'kosher'})
+    .then(results => {
+      const kosher = results;
+      res.render("dashboard", {kosher});
+    })
+    .catch(error => {
+      console.log(error);
+    })
+;// Ends promise restaurants
+})
+
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }

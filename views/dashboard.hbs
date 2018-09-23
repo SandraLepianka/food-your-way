@@ -1,4 +1,5 @@
 {{> navigator}}
+
 <div class="cards-holder">
   {{#each restaurants}}
     {{> restaurant this}}
@@ -8,5 +9,17 @@
 <div class="cards-holder">
   {{#each vegetarian}}
     {{> vegetarian this}}
+  {{/each}}
+</div>
+
+<div class="cards-holder">
+  {{#each vegan}}
+    {{> vegan this}}
+  {{/each}}
+</div>
+
+<div class="cards-holder">
+  {{#each kosher}}
+    {{> kosher this}}
   {{/each}}
 </div>
